@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Pixlee Challenge</title>
+</head>
+<body>
+  <div id='player-chart'>
+  </div>
+
+  <script id="player-table" type="text/template">
+  <button id='next-page'>Next</button>
+  <button id='previous-page'>Previous</button>
+  <thead>
+  <tr>
+  <% _.each(_.pairs(headers), function(pair){ %>
+    <th column="<%=pair[0]%>"><div><%=pair[1]%></div></th>
+    <% }) %>
+  </tr>
+  </thead>
+  <tbody>
+  <% _.each(players, function(player) { %>
+   <%var playerData = {
+    player: player.toJSON(),
+    headers: headers
+  } %>
+  <%= playerTemplate(playerData)  %>
+  <% }); %>
+  </tbody>
+  </script>
+
+  <script id="player-row" type="text/template">
+  <tr>
+  <% _.each(_.keys(headers), function(key){ %>
+    <td><div><%=player[key]%></div></td>
+    <% }) %>
+
+  </tr>
+  </script>
+
+
+  <!-- BODY SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.paginator/0.8/backbone.paginator.min.js"></script>
+
+  <!-- APP SCRIPTS -->
+  <script type="text/javascript" src="app/scripts/app.js"></script>
+
+
+  <!-- MODELS -->
+  <script type="text/javascript" src="app/scripts/models/player_model.js"></script>
+
+  <!-- COLLECTIONS -->
+  <script type="text/javascript" src="app/scripts/collections/players_collection.js"></script>
+
+  <!-- VIEWS -->
+  <script type="text/javascript" src="app/scripts/views/player_view.js"></script>
+
+  <!-- ROUTER -->
+  <script type="text/javascript" src="app/scripts/routers/router.js"></script>
+</body>
+</html>
