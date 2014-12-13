@@ -18,6 +18,7 @@ var PlayerView = Backbone.View.extend({
   nextPage: function(){
     this.currentPage = this.currentPage+1;
     this.render();
+    console.log(this);
   },
 
   previousPage: function(){
@@ -26,14 +27,14 @@ var PlayerView = Backbone.View.extend({
   },
 
   sort: function(){
-    alert("this should sort shit");
+    alert("this should sort the column");
 
   },
 
   events: {
     "click #next-page" : "nextPage",
     "click #previous-page" : "previousPage",
-    "click th" : "headerClick"
+    "click th" : "sort"
   },
 
   render: function() {
@@ -47,10 +48,4 @@ var PlayerView = Backbone.View.extend({
     return this;
   },
 
-  headerClick: function(e){
-    var $el = $(e.currentTarget),
-        ns = $el.attr('column'),
-        cs = this.collection.sortAttribute;
-    this.collection.sortPlayers(ns);
-  },
 });

@@ -1,14 +1,17 @@
 <html>
 <head>
   <title>Pixlee Challenge</title>
+  <link rel="stylesheet" href="app/stylesheets/styles.css">
 </head>
 <body>
   <div id='player-chart'>
   </div>
 
   <script id="player-table" type="text/template">
-  <button id='next-page'>Next</button>
-  <button id='previous-page'>Previous</button>
+    <div id='page-buttons'>
+      <button id='next-page'>Next</button>
+      <button id='previous-page'>Previous</button>
+    </div>
   <thead>
   <tr>
   <% _.each(_.pairs(headers), function(pair){ %>
@@ -32,7 +35,6 @@
   <% _.each(_.keys(headers), function(key){ %>
     <td><div><%=player[key]%></div></td>
     <% }) %>
-
   </tr>
   </script>
 
