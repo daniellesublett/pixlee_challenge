@@ -1,6 +1,6 @@
 var PlayersCollection = Backbone.Collection.extend({
     model: Player,
-    url: "/app/nba_player_per_game_data_1951_2015.csv",
+    url: "app/nba_player_per_game_data_1951_2015.csv",
 
    parse: function (csv) {
         //convert csv in an array of objects
@@ -16,7 +16,7 @@ var PlayersCollection = Backbone.Collection.extend({
     fetchHeaders: function(){
         var self = this;
         $.ajax({
-            url:"/app/per_game_column_descriptions.csv",
+            url:"app/per_game_column_descriptions.csv",
             dataType: "text",
         }).done(function(csv){
             var rowArrays = $.csv.toArrays(csv);
