@@ -4,7 +4,8 @@ var PlayersCollection = Backbone.Collection.extend({
 
    parse: function (csv) {
         //convert csv in an array of objects
-        return $.csv.toObjects(csv);
+        this.collection =  $.csv.toObjects(csv);
+        return this.collection;
     },
     headers: {},
     fetch: function (options) {
@@ -13,6 +14,15 @@ var PlayersCollection = Backbone.Collection.extend({
         options.dataType = "text";
         return Backbone.Collection.prototype.fetch.call(this, options);
     },
+
+    // collection.sortBy: function(){
+        // takes target element as argument
+        // underscore sort method
+        // _.sort(function(this.collection,elem){
+            // sort elem
+        // })
+    // }
+
     fetchHeaders: function(){
         var self = this;
         $.ajax({

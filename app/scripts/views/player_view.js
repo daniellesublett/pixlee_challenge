@@ -27,8 +27,9 @@ var PlayerView = Backbone.View.extend({
   },
 
   sort: function(){
+    // get target element
+    // pass target element to player sort function
     alert("this should sort the column");
-
   },
 
   events: {
