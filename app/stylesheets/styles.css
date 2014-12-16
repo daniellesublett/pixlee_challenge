@@ -1,3 +1,49 @@
 #page-buttons {
-  float: left;
+  position:fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
 }
+
+
+/*
+#tbody{
+  display: block;
+}*/
+
+tbody{
+  /*display: block;*/
+/*  margin-top: 200px;*/
+}
+
+thead{
+  background-color: white;
+  padding: 10px;
+  /*position:absolute;*/
+}
+
+tr th {
+  border: 1px solid black;
+  padding: 10px;
+}
+tr {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+
+}
+
+td:first-child {
+        /*position: fixed;*/
+        /*display: block;*/
+        /*width: 100px;*/
+    }
+
+td:nth-child(odd) {
+    background: #F0F8FE;
+
+}
+
+tbody tr td  {
+  padding-left: 20px;
+}
+

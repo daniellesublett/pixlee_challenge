@@ -2,7 +2,7 @@ var PlayerView = Backbone.View.extend({
   tagName: 'table',
   template: null,
   currentPage : 1,
-  perPage: 10,
+  perPage: 50,
 
   initialize: function() {
     this.listenTo(this.collection, "reset", this.render);
