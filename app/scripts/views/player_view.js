@@ -26,16 +26,9 @@ var PlayerView = Backbone.View.extend({
     this.render();
   },
 
-  sort: function(){
-    // get target element
-    // pass target element to player sort function
-    alert("this should sort the column");
-  },
-
   events: {
     "click #next-page" : "nextPage",
     "click #previous-page" : "previousPage",
-    "click th" : "sort"
   },
 
   render: function() {
@@ -45,6 +38,11 @@ var PlayerView = Backbone.View.extend({
       playerTemplate: _.template( $('#player-row').html() )
 
     }) );
+    $(document).ready(function()
+    {
+        $("table").tablesorter();
+    }
+);
 
     return this;
   },
